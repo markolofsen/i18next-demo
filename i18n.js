@@ -7,7 +7,10 @@ const NextI18Next = require('next-i18next').default
 const { localeSubpaths } = require('next/config').default().publicRuntimeConfig
 
 const localeSubpathVariations = {
-  none: {},
+  none: {
+    en: 'en',
+    ru: 'ru',
+  },
   foreign: {
     ru: 'ru',
   },
@@ -17,11 +20,14 @@ const localeSubpathVariations = {
   },
 }
 
+console.warn('localeSubpaths',localeSubpaths);
+
 module.exports = new NextI18Next({
   otherLanguages: ['ru'],
   localeSubpaths: localeSubpathVariations[localeSubpaths],
-  detection: {
-    order: ['htmlTag'],
-    checkWhitelist: true,
-  }
+  // detection: {
+  //   order: ['htmlTag', 'querystring'],
+  //   lookupQuerystring: 'lng',
+  //   checkWhitelist: true,
+  // }
 })

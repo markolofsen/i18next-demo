@@ -15,7 +15,9 @@ const Homepage = ({ t }) => (
 )
 
 Homepage.getInitialProps = async ({query}) => {
+	
 	console.warn('query',query);
+
 	return {
 	  namespacesRequired: ['common'],
 	};
