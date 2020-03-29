@@ -7,10 +7,7 @@ const NextI18Next = require('next-i18next').default
 const { localeSubpaths } = require('next/config').default().publicRuntimeConfig
 
 const localeSubpathVariations = {
-  none: {
-    en: 'en',
-    ru: 'ru',
-  },
+  none: {},
   foreign: {
     ru: 'ru',
   },
